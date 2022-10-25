@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int main(int argc, char const *argv[])
+int main()
 {
     // counter variable
     int compteur = 5;

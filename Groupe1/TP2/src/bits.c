@@ -30,6 +30,7 @@ int binary(int num, int len){
     else{
         printf("0");
     }
+    return 0;
 }
 
 int main(){

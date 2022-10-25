@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int main(int argc, char const *argv[])
+int main()
 {
     float rayon = 6;
     printf("perimetre = %lf \n", rayon*2*3.14);

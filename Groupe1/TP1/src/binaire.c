@@ -30,6 +30,7 @@ int binary(int num, int len){
         }
         printf("%d", bin[i]);
     }
+    return 0;
 }
 
 int main(){

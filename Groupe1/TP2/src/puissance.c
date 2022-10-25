@@ -9,9 +9,10 @@ int square(int a,int b){
         a = a*aa;
     }
     printf("%u\n", a);
+    return 0;
 }
 
-int main(int argc, char const *argv[])
+int main()
 {
     square(2,3);
     return 0;

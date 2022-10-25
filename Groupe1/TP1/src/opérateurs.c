@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int main(int argc, char const *argv[])
+int main()
 {
     int a = 16;
     int b = 3;

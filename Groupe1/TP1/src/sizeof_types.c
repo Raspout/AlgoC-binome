@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int main(int argc, char const *argv[])
+int main()
 {
     printf(" ----- Unsigned ----- \n");
     printf("size of a unsigned char : %lu bytes \n", sizeof(unsigned char));

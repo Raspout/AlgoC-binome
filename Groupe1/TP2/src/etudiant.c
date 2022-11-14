@@ -2,7 +2,7 @@
 
 int main()  
 {
-    char* tableau [5][5] ={
+    char tableau [][5][30] ={
     {"Prénom1", "Nom1", "Adresse1", "Note1.1", "Note1.2" },
     {"Prénom2", "Nom2", "Adresse2", "Note2.1", "Note2.2" },
     {"Prénom3", "Nom3", "Adresse3", "Note3.1", "Note3.2" },
@@ -20,4 +20,3 @@ int main()
 
     };
 }
-

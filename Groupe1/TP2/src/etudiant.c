@@ -10,6 +10,7 @@ int main()
     {"Prénom5", "Nom5", "Adresse5", "Note5.1", "Note5.2" }
     };
 
+    //parcours du tableau par ligne et colonne pour afficher chaque valeur
     for (int i = 0; i < 5; i++)
     {
         for (int j = 0; j < 5; j++)

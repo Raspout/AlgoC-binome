@@ -17,9 +17,10 @@ int main()
 
     float tableau2modif [5]; 
 
-    //parcours du tableau par les pointeurs pour calculer chaque nouvelles valeurs
+    //parcours du tableau grâce aux pointeurs pour calculer chaque nouvelles valeurs
     for (int i = 0; i < 5; i++)
     {
+        //verifie s'il est divisible par 2. Si c'est le cas, multiplie par 3. 
         if (i%2 == 0){
            tableau1modif[i] = *(tableau1+i)*3;
            tableau2modif[i] = *(tableau2+i)*3; 
@@ -30,7 +31,7 @@ int main()
         }
     };
 
-    //affichage
+    
     for (int i = 0; i < 5; i++)
     {
         printf("tableau int:%d \t | \t tableau int modifié %d \n", *(tableau1+i), *(tableau1modif+i));

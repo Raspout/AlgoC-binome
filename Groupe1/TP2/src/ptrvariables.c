@@ -32,32 +32,32 @@ int main() {
 
     *char_var = 'a';
     *uchar_var = 'b';
-    *short_var = -12;
+    *short_var = -1456;
     *ushort_var = 65535;
     *int_var = 12;
     *uint_var = 3456;
-    *long_var = -1234553L;
-    *ulong_var = 234556UL;
-    *llong_var = 1123345LL;
-    *ullong_var = 1234567ULL;
+    *long_var = -422356363457354553L;
+    *ulong_var = 7744523454343634356UL;
+    *llong_var = 153823756357457435LL;
+    *ullong_var = 1234533534567ULL;
     *float_var = 3.14;
-    *double_var = 3.14E-12;
-    *long_double_var = 3.14E-22; 
+    *double_var = -1;
+    *long_double_var = -1; 
 
 
-    printf("char : %p\n", (void*)char_var);
-    printf("unsigned char : %p\n", (void*)uchar_var);
-    printf("short : %p\n", (void*)short_var);
-    printf("unsigned short : %p\n", (void*)ushort_var);
-    printf("int : %p\n", (void*)int_var);
-    printf("unsigned int : %p\n", (void*)uint_var);
-    printf("long:  %p\n", (void*)long_var); 
-    printf("unsigned long : %p\n", (void*)ulong_var);
-    printf("long long : %p\n", (void*)long_var);
-    printf("unsigned long long : %p\n", (void*)ullong_var);
-    printf("float : %p\n", (void*)float_var);
-    printf("double : %p\n", (void*)double_var);
-    printf("long double : %p\n", (void*)long_double_var);
+    printf("adresse : %p, my_char %x\n", (void*)char_var, *((unsigned char*)&my_char_var));
+    printf("adresse : %p, my_unsigned char : %x\n", (void*)uchar_var, *((unsigned char*)&my_uchar_var));
+    printf("adresse : %p, my_short : %x:%x\n", (void*)short_var, *((unsigned char*)&my_short_var+1), *((unsigned char*)&my_short_var));
+    printf("adresse : %p, my_unsigned short : %x:%x\n", (void*)ushort_var, *((unsigned char*)&my_ushort_var+1) ,*((unsigned char*)&my_ushort_var));
+    printf("adresse : %p, my_int : %x\n", (void*)int_var, *((unsigned char*)&my_int_var));
+    printf("adresse : %p, my_unsigned int : %x:%x\n", (void*)uint_var, *((unsigned char*)&my_uint_var+1) ,*((unsigned char*)&my_uint_var));
+    printf("adresse : %p, my_long:  %x:%x:%x:%x:%x:%x:%x:%x\n", (void*)long_var, *((unsigned char*)&my_long_var+7), *((unsigned char*)&my_long_var+6), *((unsigned char*)&my_long_var+5), *((unsigned char*)&my_long_var+4), *((unsigned char*)&my_long_var+3), *((unsigned char*)&my_long_var+2), *((unsigned char*)&my_long_var+1), *((unsigned char*)&my_long_var)); 
+    printf("adresse : %p, my_ulong:  %x:%x:%x:%x:%x:%x:%x:%x\n", (void*)ulong_var, *((unsigned char*)&my_ulong_var+7), *((unsigned char*)&my_ulong_var+6), *((unsigned char*)&my_ulong_var+5), *((unsigned char*)&my_ulong_var+4), *((unsigned char*)&my_ulong_var+3), *((unsigned char*)&my_ulong_var+2), *((unsigned char*)&my_ulong_var+1), *((unsigned char*)&my_ulong_var)); 
+    printf("adresse : %p, my_llong:  %x:%x:%x:%x:%x:%x:%x:%x\n", (void*)llong_var, *((unsigned char*)&my_llong_var+7), *((unsigned char*)&my_llong_var+6), *((unsigned char*)&my_llong_var+5), *((unsigned char*)&my_llong_var+4), *((unsigned char*)&my_llong_var+3), *((unsigned char*)&my_llong_var+2), *((unsigned char*)&my_llong_var+1), *((unsigned char*)&my_llong_var)); 
+    printf("adresse : %p, my_unsigned long long : %x:%x:%x:%x:%x:%x:%x:%x\n", (void*)ullong_var, *((unsigned char*)&my_ullong_var+7), *((unsigned char*)&my_ullong_var+6), *((unsigned char*)&my_ullong_var+5), *((unsigned char*)&my_ullong_var+4), *((unsigned char*)&my_ullong_var+3), *((unsigned char*)&my_ullong_var+2), *((unsigned char*)&my_ullong_var+1), *((unsigned char*)&my_ullong_var)); 
+    printf("adresse : %p, my_float : %x:%x:%x:%x\n", (void*)float_var, *((unsigned char*)&my_float_var+3), *((unsigned char*)&my_float_var+2),*((unsigned char*)&my_float_var+1) ,*((unsigned char*)&my_float_var));
+    printf("adresse : %p, my_double : %x:%x:%x:%x:%x:%x:%x:%x\n", (void*)double_var, *((unsigned char*)&my_double_var+7), *((unsigned char*)&my_double_var+6), *((unsigned char*)&my_double_var+5), *((unsigned char*)&my_double_var+4), *((unsigned char*)&my_double_var+3), *((unsigned char*)&my_double_var+2), *((unsigned char*)&my_double_var+1), *((unsigned char*)&my_double_var)); 
+    printf("adresse : %p, my_long double : %x:%x:%x:%x:%x:%x:%x:%x:%x:%x\n", (void*)long_double_var, *((unsigned char*)&my_long_double_var+9), *((unsigned char*)&my_long_double_var+8), *((unsigned char*)&my_long_double_var+7), *((unsigned char*)&my_long_double_var+6), *((unsigned char*)&my_long_double_var+5), *((unsigned char*)&my_long_double_var+4), *((unsigned char*)&my_long_double_var+3), *((unsigned char*)&my_long_double_var+2), *((unsigned char*)&my_long_double_var+1), *((unsigned char*)&my_long_double_var)); 
 
     return 0;
 }

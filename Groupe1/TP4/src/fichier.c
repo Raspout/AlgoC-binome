@@ -16,6 +16,7 @@ void lire_fichier(char *nom_de_fichier){
         }
         printf("%c", content);
     }
+    printf("\n");
     close(fichier);
 }
 

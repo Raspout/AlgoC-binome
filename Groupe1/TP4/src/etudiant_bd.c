@@ -22,15 +22,15 @@ struct etudiant {
 
 
 int main() {
-    struct etudiant etudiant[2]; 
-    for(int i = 0; i < 2; i++){
+    struct etudiant etudiant[5]; 
+    for(int i = 0; i < 5; i++){
         char content[50];
         printf("Nom: "); 
         fgets(content, sizeof(content), stdin);
-        //int len_content;
-        //len_content = strlen(content);
-        //content[(len_content - 1)] = '\0'
-        //strcpy(etudiant[i].nom, strcat(content, ", "));
+        int len_content;
+        len_content = strlen(content);
+        content[(len_content - 1)] = '\0';
+        strcpy(etudiant[i].nom, strcat(content, ", "));
         strcpy(etudiant[i].nom, content);
         printf("Prénom: ");
         fgets(content, sizeof(content), stdin);
@@ -49,7 +49,7 @@ int main() {
 
     }
     
-    for(int i = 0; i < 2; i++){
+    for(int i = 0; i < 5; i++){
         ecrire_dans_fichier("etudiant.txt", etudiant[i].nom);
         ecrire_dans_fichier("etudiant.txt", etudiant[i].prenom);
         ecrire_dans_fichier("etudiant.txt", etudiant[i].adresse);

@@ -4,16 +4,22 @@
 
 void lire_dossier (char * chemin)
 {
-    DIR * rep = opendir (chemin); //ouverture du dossier indiqué dans chemin
+    //ouverture du dossier indiqué dans chemin
+    DIR * rep = opendir (chemin); 
     
-    if (rep != NULL) //Si rep n'est pas nul, on continue de lister
+    //Si rep n'est pas nul, on continue de lister
+    if (rep != NULL) 
     {
         struct dirent *ent;
         
-        while ((ent = readdir (rep)) != NULL) //Parcours de dossier tant qu'ils existent
+        //Parcours de dossier tant qu'ils existent
+        while ((ent = readdir (rep)) != NULL) 
         {
-            printf ("%s\n", ent->d_name); //Liste les dossiers
+            //Liste les dossiers
+            printf ("%s\n", ent->d_name); 
         }
+        
+        //fermeture du repertoire
         closedir (rep);
     }
     return 0;

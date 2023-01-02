@@ -8,7 +8,7 @@ int lire_dossier (char * chemin)
     
     if (rep != NULL) //Si rep n'est pas nul, on continue de lister
     {
-        struct dirent * ent;
+        struct dirent *ent;
         
         while ((ent = readdir (rep)) != NULL) //Parcours de dossier tant qu'ils existent
         {
@@ -19,9 +19,5 @@ int lire_dossier (char * chemin)
     return 0;
 }
 
-int main(){
-    char * chemin = "home/test/test1/test2";
-    lire_dossier(chemin);
-    return(0); 
-}
+
 

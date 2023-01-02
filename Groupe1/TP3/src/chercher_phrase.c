@@ -16,7 +16,7 @@ char tableau[10][200] = {
         {"Ceci est une phrase"},
         };
         
-//fonction de hash lose lose
+//fonction de hash 
 unsigned long hash(char *str)
 {
     unsigned int hash = 0;

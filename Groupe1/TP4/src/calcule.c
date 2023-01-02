@@ -6,6 +6,7 @@ int main()
     char op; 
     int num1, num2;
    
+    //entrée de l'utilisateur
     printf("Calcule: ");
     scanf("%c", &op);
    
@@ -15,7 +16,7 @@ int main()
     printf("Numéro2 : ");
     scanf("%d", &num2);
    
-    
+    //opérations en utilisant "op" opération à utiliser et "num1", "num2" donné par l'utilisateur
     switch (op)
     {
     case '+':

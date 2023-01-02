@@ -62,8 +62,10 @@ int main(){
     
     char phrase[200]; 
     
+    //entrée de l'utilisateur
     printf ("Entrez votre phrase: ");
     fgets(phrase, sizeof(phrase), stdin);
+    //empêche le "\n"
     int len_phrase;
     len_phrase = strlen(phrase);
     phrase[(len_phrase - 1)] = '\0';

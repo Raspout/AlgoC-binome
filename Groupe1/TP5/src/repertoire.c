@@ -2,7 +2,7 @@
 #include <dirent.h>
 #include "repertoire.h"
 
-int lire_dossier (char * chemin)
+void lire_dossier (char * chemin)
 {
     DIR * rep = opendir (chemin); //ouverture du dossier indiqué dans chemin
     

@@ -15,18 +15,20 @@ int main(){
         90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100
     };
 
+    //instancie les nombres les plus petit et les plus grand qu'on peut accepter
     int petit =2147483647;
     int grand = -2147483647; 
 
     printf("%d %d", petit, grand);
 
+    //parcours les éléments du tableau 1 par 1
     for (int i = 0; i < 100; i++)
     {
-
-
+        //actualise la valeur de petit si l'élément est plus petit
         if(*(tableau+i) < petit){
             petit = *(tableau+i); 
         }
+        //actualise la valeur de grand si l'élément est plus grand
         else if (*(tableau+i) > grand){
             grand = *(tableau+i);
         };

@@ -16,7 +16,7 @@ int main(){
     printf("short : \n");
 
 //Boucle pour lire chaque octet (nombre donné par size of)
-    for (int i = 0; i < sizeof(short); i++)
+    for (long unsigned int i = 0; i < sizeof(short); i++)
     {   
         printf("%hhx \n", *(ptr_short +i)); 
     };
@@ -24,7 +24,7 @@ int main(){
 //char
     char *ptr_char = (char *)&my_char_var;
     printf("char : \n");
-    for (int i = 0; i < sizeof(char); i++)
+    for (long unsigned int i = 0; i < sizeof(char); i++)
     {   
         printf("%hhx \n", *(ptr_char +i)); 
     };
@@ -32,7 +32,7 @@ int main(){
 //int
     char *ptr_int = (char *)&my_int_var;
     printf("int : \n");
-    for (int i = 0; i < sizeof(int); i++)
+    for (long unsigned int i = 0; i < sizeof(int); i++)
     {   
         printf("%hhx \n", *(ptr_int +i)); 
     };
@@ -40,7 +40,7 @@ int main(){
 //long
     char *ptr_long = (char *)&my_long_var;
     printf("long : \n");
-    for (int i = 0; i < sizeof(long); i++)
+    for (long unsigned int i = 0; i < sizeof(long); i++)
     {   
         printf("%hhx \n", *(ptr_long +i)); 
     };
@@ -48,7 +48,7 @@ int main(){
 //float
     char *ptr_float = (char *)&my_float_var;
     printf("float : \n");
-    for (int i = 0; i < sizeof(float); i++)
+    for (long unsigned int i = 0; i < sizeof(float); i++)
     {   
         printf("%hhx \n", *(ptr_float +i)); 
     };
@@ -56,7 +56,7 @@ int main(){
 //double
     char *ptr_double = (char *)&my_double_var;
     printf("double : \n");
-    for (int i = 0; i < sizeof(double); i++)
+    for (long unsigned int i = 0; i < sizeof(double); i++)
     {   
         printf("%hhx \n", *(ptr_double +i)); 
     };
@@ -64,7 +64,7 @@ int main(){
 //long double
     char *ptr_long_double = (char *)&my_long_double_var;
     printf("long double :  \n");
-    for (int i = 0; i < sizeof(long double); i++)
+    for (long unsigned int i = 0; i < sizeof(long double); i++)
     {   
         printf("%hhx \n", *(ptr_long_double +i)); 
     };

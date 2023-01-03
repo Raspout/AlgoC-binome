@@ -1,5 +1,7 @@
 #include <stdio.h>
+#include <string.h>
 #include <dirent.h>
+#include <sys/stat.h>
 #include "repertoire.h"
 
 void lire_dossier (char * chemin)
@@ -22,33 +24,32 @@ void lire_dossier (char * chemin)
         //fermeture du repertoire
         closedir (rep);
     }
-    return 0;
 }
 
-void lire_dossier_recursif(char * chemin){
+void lire_dossier_recursif(char * nomDossier){
     DIR *rep;
     struct dirent *ent;
-    rep = opendir(chemin);
+    rep = opendir(nomDossier);
     if (rep) {
         while ((ent = readdir(rep)) != NULL) {
 
             //Instancie le chemin
-            char chemin[200];
+            char chemin[300];
             
             //compteur dans le print
-            snprintf(chemin, sizeof(chemin), "%s/%s", nom, ent->d_name);
+            snprintf(chemin, sizeof(chemin), "%s/%s", nomDossier, ent->d_name);
             struct stat s;
 
             // Affiche le répertoire récursivement
-            if (stat(chemin, &s) == 0 && S_ISDIR(s.st_mode)) {
+            if (stat(nomDossier, &s) == 0 && S_ISDIR(s.st_mode)) {
                 
                 //liste le nom du repertoire et appelle la fonction lire_dossier
-                printf("%s/%s\n", nom, ent->d_name);
-                    lire_dossier_recursif(chemin);
+                printf("%s/%s\n", nomDossier, ent->d_name);
+                    lire_dossier_recursif(nomDossier);
             }
             else {
                 // L'élément est un fichier, on l'affiche seulement
-                printf("%s/%s\n", nom, ent->d_name);
+                printf("%s/%s\n", nomDossier, ent->d_name);
             }
         }
         //fermeture du répertoire
@@ -56,18 +57,18 @@ void lire_dossier_recursif(char * chemin){
     }
 }
 
-void lire_dossier_iteratif(char * chemin) {
+void lire_dossier_iteratif(char * nomDossier) {
     DIR *rep;
     struct dirent *ent;
     struct stat s;
-    char chemin[200];
+    char chemin[300];
     const int MAX_TAILLE_PILE = 100;
 
     // Initialisation de la pile
     char *pile[MAX_TAILLE_PILE];
     int indice_pile = 0;
 
-    pile[indice_pile] = chemin;
+    pile[indice_pile] = nomDossier;
     indice_pile++;
 
     // Association du chemin avec la pile
@@ -87,11 +88,10 @@ void lire_dossier_iteratif(char * chemin) {
 
                 // Ajout de l'élément à la pile 
                 if (S_ISDIR(s.st_mode)) {
-                        printf("%s/%s\n", chemin, ent->d_name);
+                        printf("%s/%s\n", nomDossier, ent->d_name);
                         pile[indice_pile] = strdup(chemin);
                         indice_pile++;
-                    }
-                }
+                } 
                 else {
                     // L'élément est un fichier, on l'affiche seulement
                     printf("%s/%s\n", repertoire_courant, ent->d_name);

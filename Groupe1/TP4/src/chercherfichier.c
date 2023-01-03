@@ -40,6 +40,8 @@ int recherche(char *motCherche, char *nomFichier) {
 
     //fermeture du fichier 
     fclose(fichier);
+
+    return 0;
 }
 
 int main(int argc, char * argv[]) {

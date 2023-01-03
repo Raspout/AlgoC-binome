@@ -7,10 +7,11 @@
 
 
 void ecrire_dans_fichier(char *nom_de_fichier, char *message){
-    int fichier, compteur, taille;
+    int fichier; 
+    
     //ouvre le fichier 
     fichier = open(nom_de_fichier, O_CREAT|O_APPEND|O_WRONLY, S_IRUSR|S_IWUSR);
-    taille = write(fichier, message, sizeof(message));
+    write(fichier, message, sizeof(message));
     close(fichier);
 };
 

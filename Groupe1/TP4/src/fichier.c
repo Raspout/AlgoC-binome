@@ -7,7 +7,7 @@
 
 void lire_fichier(char *nom_de_fichier){
     char content; 
-    int fichier, compteur, taille;
+    int fichier, taille;
     fichier = open(nom_de_fichier, O_RDONLY);
     while (1){
         taille = read(fichier, &content, 1);
@@ -21,9 +21,9 @@ void lire_fichier(char *nom_de_fichier){
 }
 
 void ecrire_dans_fichier(char *nom_de_fichier, char *message){
-    int fichier, compteur, taille;
+    int fichier;
     fichier = open(nom_de_fichier, O_CREAT|O_WRONLY, S_IRUSR|S_IWUSR);
-    taille = write(fichier, message, sizeof(message));
+    write(fichier, message, sizeof(message));
     close(fichier);
 }
 

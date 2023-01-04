@@ -16,6 +16,43 @@
 
 #include "serveur.h"
 
+int envoie_recois_message(int socketfd)
+{
+
+  char data[1024];
+  // la réinitialisation de l'ensemble des données
+  memset(data, 0, sizeof(data));
+
+  // Demandez à l'utilisateur d'entrer un message
+  char message[1024];
+  printf("Votre message (max 1000 caracteres): ");
+  fgets(message, sizeof(message), stdin);
+  strcpy(data, "message: ");
+  strcat(data, message);
+
+  int write_status = write(socketfd, data, strlen(data));
+  if (write_status < 0)
+  {
+    perror("erreur ecriture");
+    exit(EXIT_FAILURE);
+  }
+
+  // la réinitialisation de l'ensemble des données
+  memset(data, 0, sizeof(data));
+
+  // lire les données de la socket
+  int read_status = read(socketfd, data, sizeof(data));
+  if (read_status < 0)
+  {
+    perror("erreur lecture");
+    return -1;
+  }
+
+  printf("Message recu: %s\n", data);
+
+  return 0;
+}
+
 /* renvoyer un message (*data) au client (client_socket_fd)
  */
 int renvoie_message(int client_socket_fd, char *data)
@@ -74,9 +111,12 @@ int recois_envoie_message(int socketfd)
   {
     renvoie_message(client_socket_fd, data);
   }
-
+  envoie_recois_message(socketfd);
   // fermer le socket
   close(socketfd);
+
+
+
   return (EXIT_SUCCESS);
 }
 

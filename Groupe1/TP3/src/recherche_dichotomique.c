@@ -15,10 +15,7 @@ int main(){
         90, 91, 92, 93, 94, 95, 96, 97, 98, 99
     };
     
-    int i = 0;
-    int j = 0;
     int finish = 0;
-    int N = 100;
     int mil;
     int first = tab[0];
     int last = 100;
